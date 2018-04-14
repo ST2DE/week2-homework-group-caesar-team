@@ -41,7 +41,7 @@ a{
 .navbar .logo{
 	float: left;
 	/*border: solid 1px white;*/
-	height: 24px; /*對比menu的line-height*/
+	height: 38px; /*對比menu的line-height*/
 	margin-top: 14px; /*對比menu的padding高*/
 }
 .navbar .logo img{
