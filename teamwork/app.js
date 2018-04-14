@@ -16,13 +16,13 @@ app.get('/TheoWei',function(req,res){
     res.render('theowei');
 })
 app.get('/#',function(req,res){
-    res.render('#');
+    res.render('rching');
 })
 app.get('/#',function(req,res){
-    res.render('#');
+    res.render('yuchi');
 })
 app.get('/#',function(req,res){
-    res.render('#');
+    res.render('hsieh');
 })
 
 app.listen(3000);
