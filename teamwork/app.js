@@ -15,13 +15,13 @@ app.get('/',function(req,res){
 app.get('/TheoWei',function(req,res){
     res.render('theowei');
 })
-app.get('/#',function(req,res){
+app.get('/rching',function(req,res){
     res.render('rching');
 })
-app.get('/#',function(req,res){
+app.get('/yuchi',function(req,res){
     res.render('yuchi');
 })
-app.get('/#',function(req,res){
+app.get('/hsieh',function(req,res){
     res.render('hsieh');
 })
 
