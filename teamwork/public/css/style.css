@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+*{
+	position: relative;
+	box-sizing: border-box;
+/*   border: 1px solid red; */
+}
+html,body{
+	font-family: 'Roboto','微軟正黑體';
+  width: 100%;
+  margin: 0;
+  background-image: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);
+
+}
+
+/* navbar */
+
+a{
+	text-decoration: none;
+	color: white;
+}
+.container{
+/* 	width: 100%; */
+	margin: 0 auto;
+	padding: 0 24px;
+}
+/*Utility*/
+.u-cf:after{
+	content: "";
+	clear: both;
+	height: 0;
+	display: block;
+	visibility: hidden;
+}
+.navbar{
+  width: 100%;
+  top: 0;
+	background-color: black;
+  position: fixed;
+  z-index: 5;
+}
+.navbar .logo{
+	float: left;
+	/*border: solid 1px white;*/
+	height: 24px; /*對比menu的line-height*/
+	margin-top: 14px; /*對比menu的padding高*/
+}
+.navbar .logo img{
+	height: 100%;
+  
+}
+
+.menu{
+	float: right;
+}
+.menu li{
+	float: left;
+  list-style: none;
+}
+.menu > li > a{
+	display: block;
+	line-height:14px;
+	padding: 10px;
+	margin-right: 4px;
+}
+.menu > li > a:after{
+	content: "";
+	position: absolute;
+	width: 0%;
+	height: 2px;
+	background-color: #ffe541;
+	bottom: 0;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	        transform: translateX(-50%);
+	transition: 0.3s;
+}
+.menu > li > .current:after{
+	width: 100%;
+}
+.menu > li:hover > a:after{ /*滑鼠移動到li後a:after會變化*/
+	width: 100%;
+}
+
+
+
+
+/* main content */
+.main{
+  width: 100%;
+  height: 100%;
+  margin: 70px 0px;
+  padding: 10px; 
+}
+.greet{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pattern{
+  text-align: center;
+  width: 1000px;
+  margin: auto;
+  padding: 0;
+}
+.person{
+  width: 400px;
+  height: 300px;
+  margin: 50px 30px;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.imgbox{
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  
+  background-color: black;
+  cursor: pointer;
+}
+
+.picture{
+	height: 100%;
+	width: 100%;
+	
+	background-size: cover;
+	background-position: center;
+
+	opacity: 1; 
+  transition: 0.5s;
+}
+.name{
+  letter-spacing: 3px;
+  padding: 5px 20px;
+  border: 3px solid white;
+  color: white;
+    
+  position: absolute;
+  top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%,-50%);
+	        transform: translate(-50%,-50%);
+  
+  opacity: 0;
+  transition: 0.5s;
+}
+.imgbox:hover .picture{
+  opacity: 0.7;
+}
+.imgbox:hover .name{
+  opacity: 1;
+  z-index: 2;
+}
+
+.introbox{
+  top: -10px;
+  border-radius: 10px;
+  z-index:0;
+  
+  background-color: white;
+  text-align: justify;
+  letter-spacing: 1px;
+  padding: 17px 15px;
+}
+
+
+
+/* footer */
+
+.footer{
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  text-align: center;
+  color: white;
+  bottom: 0;
+  padding: 1px;
+}
+.footer h4{
+  margin: 10px;
+}
+
+
+
+/* topic */
+
+.topicbox{
+  font-size: 20px;
+	padding: 2px 25px;
+	line-height: 0px;
+	border: solid 3px white;
+	color: white;
+	overflow: hidden;
+
+	transition: 1s;
+}
+.topicbox:before{
+	content: "";
+	width: 300px;
+	height: 300px;
+	background-color: #fff;
+	border-radius: 130px;
+
+	position: absolute;
+	left: 50%;
+	top: 90%;
+	-webkit-transform: translateX(-50%);
+	        transform: translateX(-50%);
+	
+	transition: 1s;
+	-webkit-animation: wave 5s infinite linear;
+	        animation: wave 5s infinite linear;
+}
+@-webkit-keyframes wave{
+	0%{
+		-webkit-transform: translateX(-50%) rotate(0deg);
+		        transform: translateX(-50%) rotate(0deg);
+	}
+	100%{
+		-webkit-transform: translateX(-50%) rotate(360deg);
+		        transform: translateX(-50%) rotate(360deg);
+	}
+}
+@keyframes wave{
+	0%{
+		-webkit-transform: translateX(-50%) rotate(0deg);
+		        transform: translateX(-50%) rotate(0deg);
+	}
+	100%{
+		-webkit-transform: translateX(-50%) rotate(360deg);
+		        transform: translateX(-50%) rotate(360deg);
+	}
+}
+.topicbox:hover{
+	color: black;
+}
+.topicbox:hover:before{
+	top: 20px;
+	transition: 1s;
+}
+
+
+/* content */
+
+
+.content{
+	margin: 0 auto;
+	width: 75%;
+	padding: 15px 25px;
+	border-radius: 10px;
+
+	text-align: justify;
+	letter-spacing: 1px;
+	background-color: #FAFBFC;
+	
+
+}
