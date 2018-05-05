@@ -38,8 +38,9 @@
             </header>
             <section class="main">
                 <div class="content">
-                    
-                        <h1> Week2 GitHub 操作筆記 </h1>
+                        <center>
+                        <h1 style="blue"> Week2 GitHub 操作筆記 </h1>
+                        </center>
                         <h3>什麼是Git?</h3>
                         <p>Git 是一個免費開源的分布式版本控制系統，被用於高速有效地處理大大小小項目中所有文件。</p>
                         <p> Git是一個神奇的軟體，它可以讓你在項目需要的時候，隨時保存或撤回到以前的項目版本。</p>
@@ -58,30 +59,74 @@
                         <ol>
                             <li>安裝設定</li>
                             <p>@ Download and install the latest version of Git.</p>
-                                <a href="https://git-scm.com/downloads" style="color:darkred">下載最新版本github</a>
+                            <a href="https://git-scm.com/downloads" style="color:darkred">下載最新版本github</a>
                             <p>@ Set your username and email in Git.</p>
                             <p>下載之後打開bash視窗設定個人資料(姓名、email)</p>
+                            <p>$ git config --global user.name "Hsieh"</p>
+                            <p>$ git config --global user.email "xxx@gmail.com"</p>
+                            <p>設定完成後可以用以下指令來觀察是否有設定完成</p>
+                            <p>$ git config --list</p>
+                            <p>user.name=Hsieh</p>
+                            <p>user.email=xxx@gmail.com</p>
+                            <li>基本的使用流程</li>
                             <p>
-                                $ git config --global user.name "Fukuball Lin"
-                                $ git config --global user.email "fukuball@gmail.com"
+                                git init
+                                當 Git 安裝設定好之後，就可以開始使用 Git 版本控制了，假設現在你有一個資料夾project，那在這個資料夾底下下以下指令就可以開啟一個 Git Repository
+                                $ git init
+                                Initialized empty Git repository in /User/Hsieh/project/.git/
                             </p>
-                            
-                            <li>基本的使用</li>
-                            
-                                <li>git init</li>
-                                <li>git status</li>
-                            
+                            <p>
+                                git clone
+                                當團隊中有人已開啟了一個在 Git Server 上的 Git Repository，那我們就可以使用 Git clone 來將這個 Repository 抓來自己的 local 端一起進行開發。
+                                $ git clone //github.com/Hsieh/project.git
+                            </p>
+                            <p>
+                                git status 查看現在檔案的狀態，例如哪些檔案還沒 commit 等等。
+                            </p>
+                            <p>
+                                git add (stage)
+                                將新增的檔案進入版本控制，但很多人都說很暴力。
+                            </p>
+                            <p>
+                                git commit (commit) ←後面一定要加不然會跳出很奇怪的東西>"<
+                                $ git commit -m "這次 commit 的適當描述"
+                                PS:當還有檔案沒有進 stage(add指令)就下 commit 指令，commit就無法成功，這時可使用 git commit -a -m 這樣的暴力法來一次加入檔案至 stage 然後進行 commit，很多人不建議這麼做是因為太暴力(但我其實不知道什麼叫做太暴力XD))
+                                $ git commit -a -m "加入這次的完程進度"
+                            </p>
+                            <p>
+                                git push
+                                已經連結了 Git Server，接下來就要用 git push 把 local 端的 commit 更新到 Server 上
+                                PS:"一定"要commit 之後，才有辦法使用 git push。
+                                $ git push
+                            </p>
+                            <p>
+                                git pull
+                                當已經連結了 Git Server，我們就可以使用 git pull 來將遠端更新的 code 抓回來，同樣如果 local 端有任何更新，一定都要 commit 之後才
+                                有辦法使用 git pull。
+                            </p>
+                            <p>
+                                git log
+                                使用 git log 的指令主要是察看過去所有人的 commit 的紀錄，EX: commit 的版號、作者etc。
+
+                                $ git log
+                            </p>
+                            <li>另外的功能<li>
+                            <p>
+                                .gitigore
+                                一般來說有先檔案其實在local端使用就好了，傳到git上面可能會造成額外很多空間的浪費，因此在respotory的資料夾一開始通常會創建一個叫做.gitignore，
 
 
-                        </ol>
+
+                         </ol>
 
                         <h3>參考網站</h3>
-                        <a href="https://read01.com/zh-tw/kxg8m.html#.Wu0ghKSFPIU" style="color:olivedrab"></a>
-                        <a href="https://backlog.com/git-tutorial/tw/intro/intro1_1.html"style="color:olivedrab" title="參考網站1"></a>
-                        <a href="http://androchen.blogspot.tw/2013/11/git.html" style="color:olivedrab" title="基本語法整理"></a>
-                        <a href="https://gitbook.tw/chapters/introduction/what-is-git.html"style="color:olivedrab"></a>
+                        <p>https://coderwall.com/p/yl1-ug/git--2</p>
+                        <p>https://read01.com/zh-tw/kxg8m.html#.Wu0ghKSFPIU</p>
+                        <p>https://backlog.com/git-tutorial/tw/intro/intro1_1.html</p>
+                        <p>http://androchen.blogspot.tw/2013/11/git.html</p>
+                        <p>https://gitbook.tw/chapters/introduction/what-is-git.html</p>
 
-                   
+
 
                 </div>
             </section>
